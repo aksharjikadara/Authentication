@@ -1,0 +1,25 @@
+{
+  "name": "authentication-in-nodejs",
+  "version": "1.0.0",
+  "description": "authentication using JWT token",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "NodeJS",
+    "authentication"
+  ],
+  "author": "Akshar Jikadara",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "jsonwebtoken": "9.0.0",
+    "mongoose": "7.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.22"
+  }
+}

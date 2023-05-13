@@ -1,6 +1,6 @@
 {
   "name": "authentication-in-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "authentication using JWT token",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,17 @@
   "author": "Akshar Jikadara",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "5.1.0",
     "dotenv": "16.0.3",
     "express": "4.18.2",
     "jsonwebtoken": "9.0.0",
-    "mongoose": "7.1.1"
+    "mongoose": "7.1.1",
+    "winston": "3.8.2"
   },
   "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "nodemon": "2.0.22"
   }
 }

@@ -24,6 +24,9 @@ app.get('/', async (req, res) => res.sendFile(homePath));
 const signupPath = path.join(__dirname, '/views/signup.html');
 app.get('/signup', async (req, res) => res.sendFile(signupPath));
 
+const loginPath = path.join(__dirname, '/views/login.html');
+app.get('/login', async (req, res) => res.sendFile(loginPath));
+
 app.listen(PORT, () => {
   logger.info(`Server is running on http://localhost:${PORT}`);
 });

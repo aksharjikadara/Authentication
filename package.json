@@ -4,8 +4,8 @@
   "description": "authentication using JWT token",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node src/",
+    "dev": "nodemon src/"
   },
   "keywords": [
     "NodeJS",

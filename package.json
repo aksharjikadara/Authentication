@@ -1,6 +1,6 @@
 {
   "name": "authentication-in-nodejs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "authentication using JWT token",
   "main": "index.js",
   "scripts": {

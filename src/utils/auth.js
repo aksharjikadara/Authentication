@@ -13,7 +13,7 @@ const compareHash = async (password, hash) => {
 };
 
 const generateToken = async (payload) => {
-  const token = jwt.sign(payload, config.JWT_KEY, { expiresIn: config.JWT_EXPIRES });
+  const token = jwt.sign(payload, config.JWT.KEY, { expiresIn: config.JWT.EXPIRES });
   return token;
 };
 

@@ -3,11 +3,13 @@ const auth = require('../../utils/auth');
 
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
 
-    if (!email || !password) {
+    if (!email.trim() || !password.trim()) {
       return res.json({ message: 'Please provide the details' });
     }
+    if (email) email = email.trim();
+    if (password) password = password.trim();
 
     const userInstance = await UserModel.findOne({ email });
     if (!userInstance) {

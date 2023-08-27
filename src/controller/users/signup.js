@@ -3,7 +3,14 @@ const auth = require('../../utils/auth');
 
 const signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    let { name, email, password } = req.body;
+
+    if (!email.trim() || !password.trim()) {
+      return res.json({ message: 'Please provide the email or password!' });
+    }
+    if (name) name = name.trim();
+    if (email) email = email.trim();
+    if (password) password = password.trim();
 
     const userInstance = await UserModel.findOne({ email });
 

@@ -8,6 +8,7 @@ const CONFIG = require('../config/config');
 const router = require('./routes/index');
 const mongooseClient = require('./mongoose-client');
 const logger = require('./logger');
+// const sendMail = require('./utils/mail/send-mail');
 
 const mainPath = path.join(__dirname, '/views');
 const app = express();
@@ -22,6 +23,8 @@ app.use(express.static(mainPath));
 mongooseClient();
 
 router(app);
+
+// sendMail();
 
 const homePath = path.join(__dirname, '/views/index.html');
 app.get('/', async (req, res) => res.sendFile(homePath));

@@ -7,8 +7,10 @@ const config = {
     KEY: process.env.JWT_KEY,
     EXPIRES: process.env.JWT_EXPIRES,
   },
-  // JWT_KEY: process.env.JWT_KEY,
-  // JWT_EXPIRES: process.env.JWT_EXPIRES,
+  MAIL: {
+    USERNAME: process.env.MAIL_USERNAME,
+    PASSWORD: process.env.MAIL_PASSWORD,
+  },
 };
 
 module.exports = config;

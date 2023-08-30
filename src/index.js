@@ -12,7 +12,6 @@ const router = require('./routes/index');
 const mongooseClient = require('./mongoose-client');
 const logger = require('./logger');
 const startApolloServer = require('./start-apollo-server');
-// const sendMail = require('./utils/mail/send-mail');
 
 const mainPath = path.join(__dirname, '/views');
 const app = express();
@@ -28,7 +27,6 @@ router(app);
 
 app.get('/version', (req, res) => { res.json({ version: packageJson.version }); });
 
-// sendMail();
 (async () => {
   try {
     await startApolloServer(app);

@@ -1,5 +1,6 @@
 const createUser = require('./mutations/create-user');
 const users = require('./queries/user');
+const login = require('./mutations/login');
 
 const resolvers = {
   Query: {
@@ -7,6 +8,7 @@ const resolvers = {
   },
   Mutation: {
     createUser,
+    login,
   },
 };
 

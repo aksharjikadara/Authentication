@@ -16,10 +16,17 @@ type CreateUserResponse {
   message: String
 }
 
+type LoginResponse {
+  status: String!
+  message: String!
+  isNewUser: Boolean
+}
+
 type Query {
   users: [UsersResponse]
 }
 
 type Mutation {
   createUser(data: UserCreateInput!): CreateUserResponse
+  login(email: String): LoginResponse
 }

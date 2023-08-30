@@ -14,16 +14,23 @@
   "author": "Akshar Jikadara",
   "license": "ISC",
   "dependencies": {
+    "@apollo/server": "4.9.2",
+    "@graphql-tools/load-files": "7.0.0",
+    "@graphql-tools/merge": "9.0.0",
+    "@graphql-tools/schema": "10.0.0",
+    "@graphql-tools/utils": "10.0.5",
     "bcrypt": "5.1.0",
     "compression": "1.7.4",
     "cors": "2.8.5",
     "crypto": "1.0.1",
     "dotenv": "16.0.3",
     "express": "4.18.2",
+    "graphql": "16.8.0",
     "helmet": "7.0.0",
     "jsonwebtoken": "9.0.0",
     "mongoose": "7.1.1",
     "nodemailer": "6.9.4",
+    "uuid": "9.0.0",
     "winston": "3.8.2"
   },
   "devDependencies": {

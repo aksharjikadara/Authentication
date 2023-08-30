@@ -1,0 +1,25 @@
+type UsersResponse {
+  _id: String
+  firstName: String
+  lastName: String
+  email: String
+  # createdAt: DATETIME
+}
+
+input UserCreateInput {
+  firstName: String
+  lastName: String
+  email: String
+}
+
+type CreateUserResponse {
+  message: String
+}
+
+type Query {
+  users: [UsersResponse]
+}
+
+type Mutation {
+  createUser(data: UserCreateInput!): CreateUserResponse
+}

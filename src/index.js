@@ -22,9 +22,9 @@ app.use(helmet());
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(mainPath));
+app.use(express.static(mainPath));
 
-// router(app);
+router(app);
 
 app.get('/version', (req, res) => { res.json({ version: packageJson.version }); });
 
@@ -52,9 +52,5 @@ app.get('/signup', async (req, res) => res.sendFile(signupPath));
 
 const loginPath = path.join(__dirname, '/views/login.html');
 app.get('/login', async (req, res) => res.sendFile(loginPath));
-
-// app.listen(CONFIG.PORT, () => {
-//   logger.info(`Server is running on http://localhost:${CONFIG.PORT}`);
-// });
 
 module.exports = app;

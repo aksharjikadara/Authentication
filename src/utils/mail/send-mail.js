@@ -20,7 +20,7 @@ const sendMail = async (obj) => {
   });
 
   const mailOptions = {
-    from: 'jikadara2aj@gmail.com',
+    from: CONFIG.MAIL.SENDER,
     to: toEmailAddresses,
     subject: emailInstance.title,
     html: htmlContent,

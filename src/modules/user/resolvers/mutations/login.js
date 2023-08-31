@@ -42,7 +42,6 @@ const login = async (parent, args, ctx) => {
     };
 
     userInstance.otp = otp;
-
     await userInstance.save();
     return response;
   } catch (error) {

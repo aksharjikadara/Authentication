@@ -11,6 +11,7 @@ const config = {
   MAIL: {
     USERNAME: process.env.MAIL_USERNAME,
     PASSWORD: process.env.MAIL_PASSWORD,
+    SENDER: process.env.MAIL_SENDER,
   },
 };
 

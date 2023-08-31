@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const config = require('../../config/config');
+const config = require('../config/config');
 
 const generateHash = async (password) => {
   const hash = await bcrypt.hash(password, 10);

@@ -7,7 +7,7 @@ const compression = require('compression');
 
 const packageJson = require('../package.json');
 
-const CONFIG = require('../config/config');
+const CONFIG = require('./config/config');
 const router = require('./routes/index');
 const mongooseClient = require('./mongoose-client');
 const logger = require('./logger');

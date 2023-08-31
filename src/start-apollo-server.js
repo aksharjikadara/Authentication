@@ -3,7 +3,7 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const { makeExecutableSchema } = require('@graphql-tools/schema');
 const { resolvers, typeDefs } = require('./modules');
 const logger = require('./logger');
-const CONFIG = require('../config/config');
+const CONFIG = require('./config/config');
 
 const schema = makeExecutableSchema({
   typeDefs,

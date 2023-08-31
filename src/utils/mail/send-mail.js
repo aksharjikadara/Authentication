@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
 const { isEmpty } = require('lodash');
 
-const CONFIG = require('../../../config/config');
+const CONFIG = require('../../config/config');
 const logger = require('../../logger');
 const Email = require('../../model/email');
 

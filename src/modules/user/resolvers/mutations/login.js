@@ -26,9 +26,7 @@ const login = async (parent, args, ctx) => {
     }
 
     const otp = generateOTP(6);
-    console.log(otp);
 
-    // sendMail();
     sendMail({
       toEmailAddresses: userInstance.email,
       templateKey: 'OTP_AUTHENTICATION',

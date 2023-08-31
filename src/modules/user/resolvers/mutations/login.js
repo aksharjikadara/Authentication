@@ -25,17 +25,17 @@ const login = async (parent, args, ctx) => {
       isNewUser = true;
     }
 
-    // let otp;
     const otp = generateOTP(6);
+    console.log(otp);
 
-    sendMail();
-    // sendMail({
-    //   toEmailAddresses: [userInstance.email],
-    //   templateKey: 'OTP_AUTHENTICATION',
-    //   data: {
-    //     otp,
-    //   },
-    // });
+    // sendMail();
+    sendMail({
+      toEmailAddresses: userInstance.email,
+      templateKey: 'OTP_AUTHENTICATION',
+      data: {
+        otp,
+      },
+    });
 
     const response = {
       status: 'Success!',
@@ -45,9 +45,6 @@ const login = async (parent, args, ctx) => {
 
     userInstance.otp = otp;
 
-    // await User.create({
-    //   email,
-    // });
     await userInstance.save();
     return response;
   } catch (error) {

@@ -1,11 +1,16 @@
 const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
+const handlebars = require('handlebars');
+const { isEmpty } = require('lodash');
 
 const CONFIG = require('../../../config/config');
 const logger = require('../../logger');
+const Email = require('../../model/email');
 
-const sendMail = () => {
+const sendMail = async (obj) => {
+  const { toEmailAddresses, templateKey, data } = obj;
+  const emailInstance = await Email.findOne({ key: templateKey });
+  const template = handlebars.compile(emailInstance.body);
+  const htmlContent = template(data);
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -14,20 +19,16 @@ const sendMail = () => {
     },
   });
 
-  const templatePath = path.join(__dirname, '/otp.html');
-  const htmlContent = fs.readFileSync(templatePath, 'utf8');
-
   const mailOptions = {
     from: 'jikadara2aj@gmail.com',
-    to: 'akshar.logicwind@gmail.com',
-    subject: 'Nodemailer Test',
-    text: 'testing message',
+    to: toEmailAddresses,
+    subject: emailInstance.title,
     html: htmlContent,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) logger.error(error);
-    logger.info(info);
+    if (!isEmpty(info.accepted)) logger.info(`${info.response} ${info.accepted}`);
   });
 };
 

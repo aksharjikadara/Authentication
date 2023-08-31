@@ -12,6 +12,7 @@ const router = require('./routes/index');
 const mongooseClient = require('./mongoose-client');
 const logger = require('./logger');
 const startApolloServer = require('./start-apollo-server');
+const addEmailTemplate = require('./boot/add-email-template');
 
 const mainPath = path.join(__dirname, '/views');
 const app = express();
@@ -32,6 +33,7 @@ app.get('/version', (req, res) => { res.json({ version: packageJson.version }); 
     await startApolloServer(app);
     const httpServer = http.createServer(app);
     await mongooseClient();
+    addEmailTemplate();
     httpServer.listen(CONFIG.PORT, () => {
       logger.info(`🚀 Server ready at http://localhost:${CONFIG.PORT}/graphql`);
     });
